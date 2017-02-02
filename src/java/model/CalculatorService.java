@@ -14,8 +14,8 @@ public class CalculatorService {
     private double width;
     private double area;
     
-    public final double getArea(){
-        area = length * width;
+    public final double getArea(String length, String width){
+        area = Double.parseDouble(length) * Double.parseDouble(width);
         return area;
     }
     
