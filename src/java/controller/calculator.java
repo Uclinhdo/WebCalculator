@@ -38,8 +38,10 @@ public class calculator extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String length = request.getParameter("length");
             String width = request.getParameter("width");
+            
            CalculatorService cal = new CalculatorService();
            Double area = cal.getArea(length,width);
+           
            request.setAttribute("resMsg", area);
            RequestDispatcher view = request.getRequestDispatcher(ALIAS_PAGE);
            view.forward(request, response);
@@ -48,7 +50,7 @@ public class calculator extends HttpServlet {
             RequestDispatcher view = request.getRequestDispatcher(ALIAS_PAGE);
            view.forward(request, response);
         }
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
